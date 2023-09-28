@@ -1,0 +1,24 @@
+{
+  "name": "mongo-ejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon index",
+    "start": "node index"
+  },
+  "keywords": [
+    "APNPs",
+    "Sistema",
+    "Web",
+    "Gerenciamento"
+  ],
+  "author": "Luiz Oliveira <luiiz.silverio@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2"
+  }
+}
