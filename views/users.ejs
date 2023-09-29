@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Usuários</title>
+</head>
+<body>
+  <h1>Usuários</h1>
+  <table border="1">
+    <tr>
+      <th>Nome</th>
+      <th>E-mail</th>
+    </tr>
+    <% for(user of usuarios) { %> <!-- iterar uma lista -->
+      <tr>
+        <td><%= user.nome %></td>
+        <td><%= user.email %></td>
+      </tr>
+    <% } %>
+  </table>
+</body>
+</html>
