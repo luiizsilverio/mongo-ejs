@@ -1,12 +1,15 @@
 import express from "express";
 import cookieParser from "cookie-parser";
+import User from "./model/user.js";
+import db from './database/index.js';
+
 // import path from "path";
 // import ejs from "ejs";
 
 const app = express();
 
 app.use(express.json());
-// app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 app.set('view engine', 'ejs');
@@ -18,16 +21,32 @@ app.get('/', (req, res) => {
     res.render('index.ejs', {});
 })
 
-app.get('/usuarios', (req, res) => {
-    res.render('users.ejs', { usuarios: [
-      {nome: 'Diego', email: 'diego@gmail.com'},
-      {nome: 'Maria', email: 'maria@gmail.com'},
-      {nome: 'Tereza', email: 'tereza@gmail.com'},
-      {nome: 'Ana', email: 'ana@gmail.com'},
-      {nome: 'Luiz', email: 'luiz@gmail.com'},
-      {nome: 'José', email: 'jose@gmail.com'}
-    ] });
+app.get('/add', (req, res) => {
+    res.render("add-user.ejs");
 })
+
+app.post('/add', async (req, res) => {
+  const { txtNome: nome, txtEmail: email, txtSenha: senha, txtFoto: foto } = req.body;
+  const usuario = new User({
+    nome,
+    email,
+    senha,
+    foto,
+  })
+
+  try {
+    const newUser = await usuario.save();
+
+    res.redirect('/');
+  }
+  catch (err) {
+    console.log(err);
+  }
+})
+
+db.connection.once('open', () => {
+  console.log("Banco apnp conectado com sucesso");
+});
 
 app.listen(3000, () => {
     console.log('APNP rodando na porta 3000');
