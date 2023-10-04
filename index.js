@@ -1,7 +1,7 @@
 import express from "express";
 import cookieParser from "cookie-parser";
-import User from "./model/user.js";
 import db from './database/index.js';
+import routes from "./routes/index.js";
 
 // import path from "path";
 // import ejs from "ejs";
@@ -17,32 +17,8 @@ app.set('view engine', 'ejs');
 
 app.use(express.static("public"));
 
-app.get('/', (req, res) => {
-    res.render('index.ejs', {});
-})
+app.use(routes);
 
-app.get('/add', (req, res) => {
-    res.render("add-user.ejs");
-})
-
-app.post('/add', async (req, res) => {
-  const { txtNome: nome, txtEmail: email, txtSenha: senha, txtFoto: foto } = req.body;
-  const usuario = new User({
-    nome,
-    email,
-    senha,
-    foto,
-  })
-
-  try {
-    const newUser = await usuario.save();
-
-    res.redirect('/');
-  }
-  catch (err) {
-    console.log(err);
-  }
-})
 
 db.connection.once('open', () => {
   console.log("Banco apnp conectado com sucesso");

@@ -6,16 +6,15 @@ main.container {
 }
 
 main form {
+  width: 100%;
   max-width: 600px;
   display: flex;
   flex-direction: column;
-
 }
 
 label {
   padding-top: 8px;
 }
-
 
 button {
   margin-top: 12px;

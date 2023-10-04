@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alteração do Usuário</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="/main.css">
+  <link rel="stylesheet" href="/usuario.css">
+</head>
+<body>
+  <main class="container">
+    <form method="post">
+      <header>
+        <h1>Alteração do Usuário</h1>
+        <a href="/">
+          <!-- <i class="fas fa-edit"></i> -->
+          <i class="fas fa-arrow-left"></i>
+        </a>
+      </header>
+      <label for="id">Código:</label>
+      <input type="text" name="txtId" id="id" readonly value="<%= usuario.id %>" />
+      <label for="nome">Nome:</label>
+      <input type="text" name="txtNome" id="nome" placeholder="Nome" value="<%= usuario.nome %>" />
+      <label for="email">E-mail:</label>
+      <input type="email" name="txtEmail" id="email" placeholder="E-mail" value="<%= usuario.email %>" />
+      <label for="senha">Senha:</label>
+      <input type="password" name="txtSenha" id="senha" placeholder="Senha" value="<%= usuario.senha %>" />
+      <label for="foto">Foto:</label>
+      <input type="file" name="txtFoto" id="foto" />
+      <button type="submit">Salvar</button>
+    </form>
+  </main>
+</body>
+</html>
