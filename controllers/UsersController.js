@@ -28,7 +28,7 @@ export default class UsersController {
 
   async add(req, res) {
     const { txtNome: nome, txtEmail: email, txtSenha: senha } = req.body;
-    const foto = req.file.filename;
+    const foto = req.file?.filename;
 
     const usuario = new User({
       nome,

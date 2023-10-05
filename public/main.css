@@ -1,3 +1,10 @@
+:root {
+  --verde-escuro: #7b9ca4;
+  --bg-color-1: #f5f5f5;
+  --bg-color-2: #ebf3f5;
+  --text-color: rgb(85,85,85);
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -6,7 +13,7 @@
 }
 
 body {
-  background: linear-gradient(rgb(245,245,245),rgb(235,243,245));
+  background: linear-gradient(var(--bg-color-1), var(--bg-color-2));
 }
 
 header {
@@ -44,10 +51,6 @@ header a {
   height: calc(100vh - 80px);
 }
 
-.container table {
-  width: 100%;
-}
-
 .actions {
   display: flex;
   flex-direction: row;
@@ -63,39 +66,12 @@ h1 {
   font-size: 28px;
 }
 
-table, td, th {
-  border: 1px solid #ababab;
-  border-collapse: collapse;
-}
-
-th {
-  background-color: #e3d5ca;
-}
-
-th {
-  font-weight: bold;
-  padding: 6px;
-}
-
-td, th {
-  padding: 6px;
-}
-
-table tr:nth-child(odd) {
-  background-color: #FFFDFA;
-}
-
-table tr:nth-child(even) {
-  background-color: #FFF7ED;
-}
-
-table td:last-child,
-table td:nth-last-child(2) {
-  text-align: center;
+h1.title {
+  margin-bottom: 1rem;
 }
 
 a i {
-  color: rgb(123,156,164);
+  color: var(--verde-escuro);
 }
 
 .logo {

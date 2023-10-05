@@ -1,22 +1,113 @@
-.container {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+
+main.container {
+  flex-direction: row;
+  gap: 24px;
 }
 
-.container form {
+aside {
+  padding-top: 1.5rem;
+}
+
+
+form {
   width: 100%;
   max-width: 600px;
   display: flex;
+  align-items: center;
   flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  width: 100%;
+}
+
+form.busca {
+  margin-bottom: 12px;
+  flex-direction: row;
+}
+
+form input:not([type="file"]) {
+  padding: 4px;
+  border: 1px solid var(--verde-escuro);
+  outline-color: var(--verde-escuro);
+  border-radius: 4px;
+  width: 100%;
+}
+
+form button {
+  background-color: transparent;
+  border: 1px solid var(--bg-color-1);
+  cursor: pointer;
+}
+
+form button:active {
+  border: 1px solid var(--verde-escuro);
+}
+
+form button i {
+  font-size: 18px;
+  color: var(--text-color);
+  padding: 4px;
 }
 
 label {
   padding-top: 8px;
 }
 
-button {
+th {
+  background-color: var(--verde-escuro);
+  opacity: .7;
+  color: white;
+}
+
+th {
+  font-weight: bold;
+  padding: 6px;
+}
+
+td, th {
+  padding: 6px;
+}
+
+table {
+  width: 100%;
+}
+
+table, td, th {
+  border: 1px solid var(--verde-escuro);
+  border-collapse: collapse;
+}
+
+table tr:nth-child(odd) {
+  background-color: white;
+}
+
+table tr:nth-child(even) {
+  background-color: var(--bg-color-2);
+}
+
+table td:last-child,
+table td:nth-last-child(2) {
+  text-align: center;
+}
+
+button.btn {
+  background-color: var(--verde-escuro);
+  color: white;
+  padding: 8px;
+  width: 200px;
   margin-top: 12px;
+  border-radius: 6px;
+  font-size: 18px;
+  transition: all .2s;
+  cursor: pointer;
+}
+
+button.btn:hover, button.btn:active {
+  transform: scaleX(1.05);
+}
+
+
+img.fotinha {
+  max-width: 250px;
+  max-height: 250px;
 }
