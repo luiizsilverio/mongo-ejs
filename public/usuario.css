@@ -1,11 +1,12 @@
-main.container {
+.container {
   display: flex;
   flex: 1;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-main form {
+.container form {
   width: 100%;
   max-width: 600px;
   display: flex;

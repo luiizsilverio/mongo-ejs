@@ -4,20 +4,52 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Usuários</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="main.css">
 </head>
 <body>
-  <h1>Usuários</h1>
-  <table border="1">
-    <tr>
-      <th>Nome</th>
-      <th>E-mail</th>
-    </tr>
-    <% for(user of usuarios) { %> <!-- iterar uma lista -->
-      <tr>
-        <td><%= user.nome %></td>
-        <td><%= user.email %></td>
-      </tr>
-    <% } %>
-  </table>
+  <div class="container">
+
+    <%- include('header'); %>
+
+    <h1>Lista de Usuários</h1>
+    <form method="post">
+      <input type="text" name="txtPesquisa" placeholder="Pesquisar" />
+      <button type="submit">
+        <i class="fas fa-search"></i>
+      </button>
+    </form>
+
+    <table>
+      <thead>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>E-mail</th>
+        <th>Foto</th>
+        <th>Apagar</th>
+        <th>Alterar</th>
+      </thead>
+      <% for(user of usuarios) { %>
+        <tr>
+          <td><%= user._id %></td>
+          <td><%= user.nome %></td>
+          <td><%= user.email %></td>
+          <td>
+            <img src="/uploads/<%= user.foto %>" class="foto"/>
+          </td>
+          <td>
+            <a href="/users/del/<%= user._id %>">
+              <i class="fas fa-trash-alt"></i>
+            </a>
+          </td>
+          <td>
+            <a href="/users/edit/<%= user._id %>">
+              <i class="fas fa-edit"></i>
+            </a>
+          </td>
+        </tr>
+      <% } %>
+    </table>
+  </div>
 </body>
 </html>

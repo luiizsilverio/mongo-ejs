@@ -1,12 +1,10 @@
 import express from "express";
-import UsersController from "../controllers/UsersController.js";
 import usersRoutes from "./users.routes.js";
 
 const routes = express.Router();
-const controller = new UsersController();
 
-routes.get('/', (req, res) => controller.index);
-routes.post('/', (req, res) => controller.find);
+routes.get('/', (req, res) => res.redirect('/users'));
+routes.post('/', (req, res) => usersRoutes.find);
 
 routes.use('/users', usersRoutes);
 

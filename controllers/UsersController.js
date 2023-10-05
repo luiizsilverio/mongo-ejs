@@ -27,13 +27,16 @@ export default class UsersController {
   }
 
   async add(req, res) {
-    const { txtNome: nome, txtEmail: email, txtSenha: senha, txtFoto: foto } = req.body;
+    const { txtNome: nome, txtEmail: email, txtSenha: senha } = req.body;
+    const foto = req.file.filename;
+
     const usuario = new User({
       nome,
       email,
       senha,
       foto,
     })
+
     try {
       await usuario.save();
       res.redirect('/');
@@ -45,7 +48,9 @@ export default class UsersController {
   }
 
   async edit(req, res) {
-    const { txtId: id, txtNome: nome, txtEmail: email, txtSenha: senha, txtFoto: foto } = req.body;
+    const { txtId: id, txtNome: nome, txtEmail: email, txtSenha: senha } = req.body;
+    const foto = req.file.filename;
+
     const usuario = new User({
       id,
       nome,
@@ -82,7 +87,7 @@ export default class UsersController {
     const { txtPesquisa: pesquisa } = req.body;
     try {
       const usuarios = await User.find({
-        nome: new RegExp(pesquisa, 'gi')
+        nome: new RegExp(pesquisa, 'i')
       });
 
       res.render('index.ejs', { usuarios });

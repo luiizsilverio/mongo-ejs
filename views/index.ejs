@@ -8,25 +8,17 @@
   <link rel="stylesheet" href="main.css">
 </head>
 <body>
+  <%- include('header'); %>
+
   <div class="container">
-    <header>
-      <h1>Lista de Usuários</h1>
-      <div class="actions">
-        <a href="/users/add">
-          <!-- <i class="fas fa-edit"></i> -->
-          <button type="button">
-            <i class="fas fa-plus"></i>
-            Novo usuário
-          </button>
-        </a>
-        <form method="post">
-          <input type="text" name="txtPesquisa" placeholder="Pesquisar" />
-          <button type="submit">
-            <i class="fas fa-search"></i>
-          </button>
-        </form>
-      </div>
-    </header>
+    <h1>Lista de Usuários</h1>
+    <form method="post">
+      <input type="text" name="txtPesquisa" placeholder="Pesquisar" />
+      <button type="submit">
+        <i class="fas fa-search"></i>
+      </button>
+    </form>
+
     <table>
       <thead>
         <th>ID</th>
@@ -41,7 +33,9 @@
           <td><%= user._id %></td>
           <td><%= user.nome %></td>
           <td><%= user.email %></td>
-          <td><%= user.foto %></td>
+          <td>
+            <img src="/uploads/<%= user.foto %>" class="foto"/>
+          </td>
           <td>
             <a href="/users/del/<%= user._id %>">
               <i class="fas fa-trash-alt"></i>

@@ -9,15 +9,11 @@
   <link rel="stylesheet" href="/usuario.css">
 </head>
 <body>
+  <%- include('header'); %>
+
   <main class="container">
-    <form method="post">
-      <header>
-        <h1>Novo Usuário</h1>
-        <a href="/">
-          <!-- <i class="fas fa-edit"></i> -->
-          <i class="fas fa-arrow-left"></i>
-        </a>
-      </header>
+    <form method="post" enctype="multipart/form-data">
+      <h1>Novo Usuário</h1>
       <label for="nome">Nome:</label>
       <input type="text" name="txtNome" id="nome" placeholder="Nome" />
       <label for="email">E-mail:</label>
