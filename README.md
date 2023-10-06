@@ -10,8 +10,10 @@
 ## Sobre a aplicação
 Aplicação Web desenvolvida em __Node.js__ com __EJS__ e __MongoDB__.<br />
 Permite listar, cadastrar e alterar usuários.<br />
-Desenvolvido baseado nos vídeos da playlist [Sistema Web com Node e MongoDB](https://www.youtube.com/playlist?list=PLLBtSf_66PxqkVsbywbbnC6ID_0UXaN7M), do canal do Diego Porcellis no Youtube.
-<br />
+Desenvolvido baseado nos vídeos da playlist [Sistema Web com Node e MongoDB](https://www.youtube.com/playlist?list=PLLBtSf_66PxqkVsbywbbnC6ID_0UXaN7M), do canal do Diego Porcellis no Youtube. <br />
+O primeiro vídeo tem problema de áudio, mas os demais estão com áudio normal. <br />
+É uma aplicação back-end raiz, que renderiza as páginas do lado do servidor, utilizando template engine. <br />
+Melhorei a organização do programa por conta própria, separando as rotas e controller em arquivos e pastas separados, além de melhorar a estilização das páginas.<br />
 
 ### Rotas da aplicação
 
