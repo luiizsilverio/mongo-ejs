@@ -1,6 +1,9 @@
 import express from "express";
 import cookieParser from "cookie-parser";
 
+import swaggerUI from 'swagger-ui-express';
+import swaggerCfg from './swagger.json' assert { type: "json" };
+
 import db from './database/index.js';
 import routes from "./routes/index.js";
 
@@ -16,6 +19,7 @@ app.use(express.static("public"));
 
 app.use(routes);
 
+app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerCfg));
 
 db.connection.once('open', () => {
   console.log("Banco apnp conectado com sucesso");

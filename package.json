@@ -24,6 +24,8 @@
     "multer": "^1.4.5-lts.1"
   },
   "devDependencies": {
-    "@types/mongoose": "^5.11.97"
+    "@types/add": "^2.0.0",
+    "@types/mongoose": "^5.11.97",
+    "swagger-ui-express": "^5.0.0"
   }
 }

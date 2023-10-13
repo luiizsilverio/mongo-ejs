@@ -1,0 +1,12 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "EJS-Mongo API",
+    "description": "Documentação a API EJS-Mongo",
+    "version": "1.0.0",
+    "contact": {
+      "email": "luiiz.silverio@gmail.com"
+    }
+  },
+  "basePath": "/"
+}
